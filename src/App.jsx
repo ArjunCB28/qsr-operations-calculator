@@ -10,6 +10,7 @@ import {
   Paper,
   Select,
   MenuItem,
+  Box,
 } from "@mui/material";
 import "./App.css";
 
@@ -20,7 +21,7 @@ const MonthlyCostCalculator = () => {
     noOfEmployees: 2,
     employeeSalary_Hourly: 17.2,
     hoursOfOperation_Daily: 12,
-    sales_Daily: 1500,
+    sales_Daily: 1800,
     rent_Monthly: 5000,
     utility_Monthly: 1000,
     mortgageAmountOverall: 300000,
@@ -210,7 +211,7 @@ const MonthlyCostCalculator = () => {
           </Grid>
 
           {/* Daily Sales */}
-          <Grid size={{ xs: 12, md: 8 }}>
+          <Grid size={{ xs: 12, md: 8, lg: 8, xl: 8 }}>
             <TextField
               label="Daily Sales ($)"
               type="number"
@@ -220,9 +221,10 @@ const MonthlyCostCalculator = () => {
               fullWidth
             />
           </Grid>
+          <Box sx={{ width: "100%", display: "block" }} />
 
           {/* Royalty Percentage */}
-          <Grid size={{ xs: 6, md: 4 }}>
+          <Grid size={{ xs: 6, md: 4, lg: 4, xl: 4 }}>
             <TextField
               label="Royalty (%)"
               type="number"
@@ -233,7 +235,7 @@ const MonthlyCostCalculator = () => {
             />
           </Grid>
 
-          {/* Daily Sales */}
+          {/* Ad Percentage */}
           <Grid size={{ xs: 6, md: 4 }}>
             <TextField
               label="Ad Fee (%)"
@@ -270,7 +272,7 @@ const MonthlyCostCalculator = () => {
           </Grid>
 
           {/* Mortgage Amount */}
-          <Grid size={{ xs: 12, md: 8 }}>
+          <Grid size={{ xs: 12, md: 8, lg: 8, xl: 8 }}>
             <TextField
               label="Overall mortgage amount ($)"
               type="number"
@@ -280,9 +282,9 @@ const MonthlyCostCalculator = () => {
               fullWidth
             />
           </Grid>
-
+          <Box sx={{ width: "100%", display: "block" }} />
           {/* Mortgage Percentage */}
-          <Grid size={{ xs: 6, md: 4 }}>
+          <Grid size={{ xs: 6, md: 4, lg: 4, xl: 4 }}>
             <TextField
               label="Mortgage percentage (%)"
               type="number"
@@ -294,7 +296,7 @@ const MonthlyCostCalculator = () => {
           </Grid>
 
           {/* Mortgage Period */}
-          <Grid size={{ xs: 6, md: 4 }}>
+          <Grid size={{ xs: 6, md: 4, lg: 4, xl: 4 }}>
             <Select
               labelId="mortgage_Months"
               id="mortgage_Months"
@@ -310,6 +312,7 @@ const MonthlyCostCalculator = () => {
             </Select>
           </Grid>
 
+          <Box sx={{ width: "100%", display: "block" }} />
           {/* Calculate Button */}
           <Grid size={{ xs: 8, md: 6 }}>
             <Button
