@@ -23,7 +23,7 @@ const MonthlyCostCalculator = () => {
     hoursOfOperation_Daily: 12,
     sales_Daily: 1800,
     rent_Monthly: 5000,
-    utility_Monthly: 1000,
+    utilities_Monthly: 1000,
     mortgageAmountOverall: 300000,
     mortgagePercentage: 5,
     mortgage_Months: 72,
@@ -52,7 +52,7 @@ const MonthlyCostCalculator = () => {
     insurance_Yearly: 2500,
     wasteDisposal_Yearly: 3000,
     maintenance_Yearly: 3000,
-    phoneAndInternet_Yearly: 3000,
+    phoneAndInternet_Yearly: 1200,
     operationCost_Yearly: null,
     profit_Yearly: null,
     mortgage_Yearly: null,
@@ -95,7 +95,7 @@ const MonthlyCostCalculator = () => {
 
   const calcOperationCost_Year = (yearlySales) => {
     const mortgage = calculateMortgage_Monthly() * 12;
-    const utilityCost = qsr.utility_Monthly * 12;
+    const utilityCost = qsr.utilities_Monthly * 12;
     const rentCost = qsr.rent_Monthly * 12;
     return (
       // Food Cost
@@ -151,7 +151,7 @@ const MonthlyCostCalculator = () => {
     setOutput((prevOutput) => ({
       ...prevOutput,
       rent_Yearly: qsr.rent_Monthly * 12,
-      utilities_Yearly: qsr.utility_Monthly,
+      utilities_Yearly: qsr.utilities_Monthly * 12,
       foodCost_Yearly: calcFoodCost_Yearly(),
       labour_Yearly: calcEmploymentCost_Yearly(),
       operationCost_Yearly: operationCost,
@@ -264,8 +264,8 @@ const MonthlyCostCalculator = () => {
             <TextField
               label="Monthly Utilities ($)"
               type="number"
-              id="utility_Monthly"
-              value={qsr.utility_Monthly}
+              id="utilities_Monthly"
+              value={qsr.utilities_Monthly}
               onChange={handleInputChange}
               fullWidth
             />
